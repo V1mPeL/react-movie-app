@@ -27,7 +27,7 @@ const SingleMoviePage = () => {
     console.log(movieDetails)
 
   return (
-    <div>
+    <div className='flex flex-col items-center'>
         <div className="flex flex-col md:flex-row items-center  md:items-start px-4 py-8 md:p-12">
             <img
                 src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
