@@ -12,7 +12,7 @@ const Thumbnail = ({data}) => {
       <img 
         src={`${BASE_URL}${data.backdrop_path || data.poster_path}` || `${BASE_URL}${data.poster_path}`} 
         alt={`${data.title || data.original_name}`}
-        className="w-full h-auto"
+        className="w-full h-[250px]"
       />
       <div className='p-2'>
         <p className='truncate max-w-md'>{data.overview}</p>

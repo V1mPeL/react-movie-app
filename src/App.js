@@ -3,6 +3,7 @@ import HomePage from "./components/pages/HomePage";
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import SingleMoviePage from './components/pages/SingleMoviePage';
+import SearchPage from './components/pages/SearchPage';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<HomePage/>}/>
+        <Route path='/search' element={<SearchPage/>}/>
         <Route path="/movies/:movieId" element={<SingleMoviePage />}/>
       </Routes>
     </>

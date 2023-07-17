@@ -21,7 +21,7 @@ const SingleMoviePage = () => {
         fetchMovieDetails()
     }, [movieId])
     if (!movieDetails) {
-        return <div>Loading...</div>;
+        return <div className="w-12 h-12 border-4 border-blue-600 rounded-full loader"></div>
     }
 
     console.log(movieDetails)
@@ -32,7 +32,7 @@ const SingleMoviePage = () => {
             <img
                 src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
                 alt={movieDetails.original_title}
-                className="w-[250px] md:w-[300px] h-auto object-cover mb-8 md:mb-0 mr-8"
+                className="w-[250px] md:w-[300px] h-auto object-cover mb-8 md:mb-0 mr-0 md:mr-8"
             />
             <div className="flex flex-col items-center md:items-start">
                 <h1 className="text-2xl md:text-4xl font-bold text-center md:text-left mb-4">{movieDetails.original_title}</h1>

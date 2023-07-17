@@ -44,3 +44,17 @@ export const getMovieCredits = async (movieId) => {
         throw new Error('Failed to fetch movie credits');
     }
 };
+
+export const getMovieByTitle = async (query) => {
+    try {
+        const response = await api.get(`/search/movie`, {
+            params: {
+                api_key: API_KEY,
+                query: query,
+            },
+        });
+        return response.data.cast;
+    } catch (error) {
+        throw new Error('Failed to fetch movie credits');
+    }
+};
