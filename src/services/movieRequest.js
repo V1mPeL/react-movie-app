@@ -61,8 +61,5 @@ export default {
         title: "War",
         url: `/discover/movie?api_key=${API_KEY}&with_genres=10752`,
     },
-    fetchWesternMovie: {
-        title: "Western",
-        url: `/discover/movie?api_key=${API_KEY}&with_genres=37`,
-    },
-}
+};
+

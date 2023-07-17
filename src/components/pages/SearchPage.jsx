@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import Thumbnail from '../thumbnail/Thumbnail';
-import MovieList from '../movieList/MovieList';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import Thumbnail from "../thumbnail/Thumbnail";
+import MovieList from "../movieList/MovieList";
+import { Link } from "react-router-dom";
 
 const SearchPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -13,20 +13,21 @@ const SearchPage = () => {
     setIsLoading(true);
 
     try {
-        const res= await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${searchTerm}`);
-        const data= await res.json();
+      const res = await fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${searchTerm}`
+      );
+      const data = await res.json();
 
-        setSearchResults(data.results);
+      setSearchResults(data.results);
     } catch (error) {
-      console.error('Error searching movies:', error);
+      console.error("Error searching movies:", error);
     } finally {
       setIsLoading(false);
     }
   };
 
-  console.log(searchResults)
   return (
-    <div className='p-8'>
+    <div className="p-8">
       <form className="flex items-center justify-center my-4 ">
         <input
           type="text"
@@ -47,7 +48,7 @@ const SearchPage = () => {
       {isLoading ? (
         <div className="w-12 h-12 border-4 border-blue-600 rounded-full loader"></div>
       ) : (
-        <MovieList requests={searchResults}/>
+        <MovieList requests={searchResults} />
       )}
     </div>
   );

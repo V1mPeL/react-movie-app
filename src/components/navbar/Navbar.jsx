@@ -15,14 +15,20 @@ const Navbar = () => {
     <div className="w-screen flex justify-center mb-[50px]">
       <div className="px-5 flex w-full justify-between items-center h-20 px-4 absolute z-10 text-white">
         <div>
-          <Link to='/' className="text-3xl font-bold">
+          <Link to="/" className="text-3xl font-bold">
             MOVIEBASE
           </Link>
         </div>
         <div className="hidden md:flex gap-[20px] text-xl">
-          <Link to="/" className="hover:text-blue-700 transition duration-300">Home</Link>
-          <Link to="/search" className="hover:text-blue-700 transition duration-300">Search</Link>
-          <Link to="/series" className="hover:text-blue-700 transition duration-300">TV Series</Link>
+          <Link to="/" className="hover:text-blue-700 transition duration-300">
+            Home
+          </Link>
+          <Link
+            to="/search"
+            className="hover:text-blue-700 transition duration-300"
+          >
+            Search
+          </Link>
         </div>
 
         {/* Hamburger */}
@@ -50,9 +56,6 @@ const Navbar = () => {
             </Link>
             <Link to="/search" className="border-b">
               Search
-            </Link>
-            <Link to="/series" className="border-b">
-              TV Series
             </Link>
           </div>
         </div>
